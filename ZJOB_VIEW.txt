@@ -1,0 +1,21 @@
+@AbapCatalog.sqlViewName: 'ZJOB_V'
+@AbapCatalog.compiler.compareFilter: true
+@AccessControl.authorizationCheck: #CHECK
+@EndUserText.label: 'JOB'
+@ObjectModel.compositionRoot: true
+@ObjectModel.modelCategory: #BUSINESS_OBJECT
+@ObjectModel.writeActivePersistence: 'ZJOB'
+@ObjectModel.semanticKey: [ 'JobID' ]
+@ObjectModel.representativeKey: [ 'JobID' ]
+@ObjectModel.transactionalProcessingEnabled: true
+@ObjectModel.createEnabled: true
+@ObjectModel.updateEnabled: true
+@ObjectModel.deleteEnabled: true
+
+define view ZJOB_VIEW as select from zjob {
+    //ZJOB  
+    key z_jobid as JobID, 
+    z_jobname as JobName
+    
+    
+} 

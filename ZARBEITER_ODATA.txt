@@ -1,0 +1,26 @@
+@AbapCatalog.sqlViewName: 'ZARBEITER_o'
+@AbapCatalog.compiler.compareFilter: true
+@AccessControl.authorizationCheck: #NOT_REQUIRED
+@EndUserText.label: 'ODATA_View_ZARBEITER'
+//@Search.searchable: true
+@OData.publish: true
+@ObjectModel.transactionprocessingDelegated: true
+@ObjectModel.semanticKey: [  'z_arbeitername' ]
+@ObjectModel.representativeKey: [  'z_arbeitername' ]
+@ObjectModel.createEnabled: true
+@ObjectModel.updateEnabled: true
+@ObjectModel.deleteEnabled: true
+@UI.headerInfo.typeName: 'Entity'
+define view ZARBEITER_ODATA as select from ZARBEITER_VIEW {
+//ZARBEITER_VIEW 
+key z_arbeitername, 
+z_jobid, 
+z_bereichid, 
+z_gehalt, 
+z_plz, 
+z_stadt, 
+z_strasse, 
+BereichID, 
+z_bereichname  
+} 
+ 

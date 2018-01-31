@@ -1,0 +1,27 @@
+@AbapCatalog.sqlViewName: 'ZARBEITER_V'
+@AbapCatalog.compiler.compareFilter: true
+@AccessControl.authorizationCheck: #CHECK
+@EndUserText.label: 'CDS_View_ZARBEITER'
+@ObjectModel.compositionRoot: true
+@ObjectModel.modelCategory: #BUSINESS_OBJECT
+@ObjectModel.writeActivePersistence: 'ZARBEITER'
+@ObjectModel.semanticKey: ['z_arbeitername' ]
+@ObjectModel.representativeKey: [  'z_arbeitername' ]
+@ObjectModel.transactionalProcessingEnabled: true
+@ObjectModel.createEnabled: true
+@ObjectModel.updateEnabled: true
+@ObjectModel.deleteEnabled: true
+define view ZARBEITER_VIEW as select from zarbeiter join zbereich on zarbeiter.z_bereichid=zbereich.z_bereichid {
+//zarbeiter  
+key z_arbeitername, 
+z_jobid, 
+zarbeiter.z_bereichid, 
+z_gehalt, 
+z_plz,
+z_stadt,
+z_strasse,
+//zbereich 
+zbereich.z_bereichid as BereichID, 
+z_bereichname
+
+} 
